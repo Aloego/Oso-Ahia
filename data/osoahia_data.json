@@ -1,0 +1,730 @@
+{
+  "users": {
+    "user-customer-1": {
+      "uid": "user-customer-1",
+      "email": "chioma@osoahia.ng",
+      "role": "customer",
+      "fullName": "Chioma Adebayo",
+      "phone": "08023456789",
+      "defaultLocation": {
+        "state": "Lagos",
+        "lga": "Ikeja"
+      },
+      "createdAt": "2026-09-02T11:49:45.973Z"
+    },
+    "user-vendor-1": {
+      "uid": "user-vendor-1",
+      "email": "vendor1@osoahia.ng",
+      "role": "vendor",
+      "fullName": "Emeka Nwosu",
+      "phone": "08098765432",
+      "defaultLocation": {
+        "state": "Lagos",
+        "lga": "Ikeja"
+      },
+      "createdAt": "2026-08-24T11:49:45.973Z"
+    },
+    "user-vendor-2": {
+      "uid": "user-vendor-2",
+      "email": "vendor2@alaba.ng",
+      "role": "vendor",
+      "fullName": "Babatunde Balogun",
+      "phone": "08123344556",
+      "defaultLocation": {
+        "state": "Lagos",
+        "lga": "Alimosho"
+      },
+      "createdAt": "2026-09-05T11:49:45.973Z"
+    },
+    "user-admin-1": {
+      "uid": "user-admin-1",
+      "email": "admin@osoahia.ng",
+      "role": "admin",
+      "fullName": "Kolawole Danjuma (Admin)",
+      "phone": "08000000001",
+      "defaultLocation": {
+        "state": "Lagos",
+        "lga": "Ikeja"
+      },
+      "createdAt": "2026-08-08T11:49:45.973Z"
+    }
+  },
+  "vendors": {
+    "sample-vendor-001": {
+      "id": "sample-vendor-001",
+      "userId": "user-vendor-1",
+      "businessName": "Gadget Express Lagos",
+      "businessAddress": "Shop 14, Computer Village, Ikeja",
+      "state": "Lagos",
+      "lga": "Ikeja",
+      "verificationStatus": "approved",
+      "verificationDocUrl": "https://images.unsplash.com/photo-1450133064473-71024230f91b?w=400",
+      "bankDetails": {
+        "bankName": "Access Bank",
+        "accountNumber": "0123456789",
+        "accountName": "Gadget Express Ventures"
+      },
+      "commissionRate": 0.1,
+      "createdAt": "2026-08-24T11:49:45.973Z"
+    },
+    "sample-vendor-002": {
+      "id": "sample-vendor-002",
+      "userId": "user-vendor-1",
+      "businessName": "Aba Mastercraft Textiles",
+      "businessAddress": "Plaza 3, Mandilas Market, Lagos Island",
+      "state": "Lagos",
+      "lga": "Lagos Island",
+      "verificationStatus": "approved",
+      "verificationDocUrl": "https://images.unsplash.com/photo-1450133064473-71024230f91b?w=400",
+      "bankDetails": {
+        "bankName": "Zenith Bank",
+        "accountNumber": "2081234567",
+        "accountName": "Aba Mastercraft Fashion"
+      },
+      "commissionRate": 7,
+      "createdAt": "2026-08-28T11:49:45.973Z"
+    },
+    "sample-vendor-003": {
+      "id": "sample-vendor-003",
+      "userId": "user-vendor-2",
+      "businessName": "Alaba Sound & Vision",
+      "businessAddress": "Line 4, Alaba International Market, Ojo",
+      "state": "Lagos",
+      "lga": "Ojo",
+      "verificationStatus": "pending",
+      "verificationDocUrl": "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=400",
+      "bankDetails": {
+        "bankName": "United Bank for Africa",
+        "accountNumber": "1099887766",
+        "accountName": "Alaba Sound & Vision Hub"
+      },
+      "commissionRate": 0.1,
+      "createdAt": "2026-09-06T11:49:45.973Z"
+    }
+  },
+  "products": {
+    "prod-001": {
+      "id": "prod-001",
+      "vendorId": "sample-vendor-001",
+      "vendorName": "Gadget Express Lagos",
+      "name": "Tecno Camon 20 Pro (8GB/256GB)",
+      "slug": "tecno-camon-20-pro",
+      "sku": "OSO-PHN-001",
+      "description": "Brand new Nigerian warranty, FHD+ AMOLED, 64MP RGBW Night sensor with ultra-clear night portraits. Includes original fast charger in box.",
+      "brand": "Tecno",
+      "categoryId": "phones-tablets",
+      "condition": "New",
+      "price": 245000,
+      "discountedPrice": 232000,
+      "stock": 13,
+      "images": [
+        "https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=600",
+        "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600"
+      ],
+      "specifications": {
+        "RAM": "8GB",
+        "Storage": "256GB",
+        "Battery": "5000mAh 33W",
+        "Display": "6.67\" 120Hz AMOLED"
+      },
+      "variations": [
+        {
+          "name": "Color",
+          "options": [
+            {
+              "label": "Dark Welkin (Black)",
+              "price": 232000,
+              "stock": 8,
+              "sku": "OSO-PHN-001-BLK"
+            },
+            {
+              "label": "Serenity Blue",
+              "price": 232000,
+              "stock": 6,
+              "sku": "OSO-PHN-001-BLU"
+            }
+          ]
+        }
+      ],
+      "supportedStates": [
+        "Lagos"
+      ],
+      "approvalStatus": "approved",
+      "isPublished": true,
+      "isFeatured": true,
+      "ratingAvg": 4.8,
+      "ratingCount": 32,
+      "createdAt": "2026-09-04T11:49:45.973Z"
+    },
+    "prod-002": {
+      "id": "prod-002",
+      "vendorId": "sample-vendor-002",
+      "vendorName": "Aba Mastercraft Textiles",
+      "name": "Original White Senator Suit Material (4 Yards)",
+      "slug": "white-senator-suit-material",
+      "sku": "OSO-FSH-002",
+      "description": "Premium cashmere wool material suitable for traditional wedding, agbada, and Sunday best attire. Does not fade or shrink when washed.",
+      "brand": "Aba Mastercraft",
+      "categoryId": "fashion-fabrics",
+      "condition": "New",
+      "price": 18000,
+      "discountedPrice": null,
+      "stock": 39,
+      "images": [
+        "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=600",
+        "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=600"
+      ],
+      "specifications": {
+        "Length": "4 Yards",
+        "Material": "Cashmere Wool Blend",
+        "Texture": "Soft & Breathable"
+      },
+      "supportedStates": [
+        "Lagos"
+      ],
+      "approvalStatus": "approved",
+      "isPublished": true,
+      "isFeatured": false,
+      "ratingAvg": 4.6,
+      "ratingCount": 11,
+      "createdAt": "2026-09-03T11:49:45.973Z"
+    },
+    "prod-003": {
+      "id": "prod-003",
+      "vendorId": "sample-vendor-001",
+      "vendorName": "Gadget Express Lagos",
+      "name": "UK Used Apple iPhone 12 128GB (Blue)",
+      "slug": "uk-used-iphone-12-128gb",
+      "sku": "OSO-PHN-003",
+      "description": "Extremely clean Nigerian-tested condition, 87% battery health, factory unlocked. Face ID active, true tone intact. Tested with MTN & Airtel SIMs.",
+      "brand": "Apple",
+      "categoryId": "phones-tablets",
+      "condition": "Used",
+      "price": 360000,
+      "discountedPrice": 345000,
+      "stock": 5,
+      "images": [
+        "https://images.unsplash.com/photo-1605236453806-6ff36851218e?w=600",
+        "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=600"
+      ],
+      "specifications": {
+        "BatteryHealth": "87%",
+        "Storage": "128GB",
+        "Condition": "Grade A UK Used",
+        "Network": "Factory Unlocked (5G)"
+      },
+      "supportedStates": [
+        "Lagos"
+      ],
+      "approvalStatus": "approved",
+      "isPublished": true,
+      "isFeatured": true,
+      "ratingAvg": 4.9,
+      "ratingCount": 7,
+      "createdAt": "2026-09-05T11:49:45.973Z"
+    },
+    "prod-004": {
+      "id": "prod-004",
+      "vendorId": "sample-vendor-001",
+      "vendorName": "Gadget Express Lagos",
+      "name": "Oraimo 20,000mAh Powerbox Fast Charge Power Bank",
+      "slug": "oraimo-20000mah-power-bank",
+      "sku": "OSO-ACC-004",
+      "description": "Original Oraimo 20000mAh high-capacity power bank with dual fast outputs and Type-C input. Built-in multi-protection against power surges.",
+      "brand": "Oraimo",
+      "categoryId": "electronics",
+      "condition": "New",
+      "price": 24000,
+      "discountedPrice": 21500,
+      "stock": 25,
+      "images": [
+        "https://images.unsplash.com/photo-1609592424300-84386927d32a?w=600"
+      ],
+      "specifications": {
+        "Capacity": "20,000mAh",
+        "Output": "Dual USB 2.4A Max",
+        "Torchlight": "Built-in Dual LED"
+      },
+      "supportedStates": [
+        "Lagos"
+      ],
+      "approvalStatus": "approved",
+      "isPublished": true,
+      "isFeatured": true,
+      "ratingAvg": 4.7,
+      "ratingCount": 45,
+      "createdAt": "2026-09-02T11:49:45.973Z"
+    },
+    "prod-005": {
+      "id": "prod-005",
+      "vendorId": "sample-vendor-002",
+      "vendorName": "Aba Mastercraft Textiles",
+      "name": "Original Nigerian Navy Blue Cashmere Suit (5 Yards)",
+      "slug": "navy-blue-cashmere-suit",
+      "sku": "OSO-FSH-005",
+      "description": "Lustrous deep navy blue woven suiting fabric. Ideal for modern corporate Nigerian suits, Kaftans, and traditional weddings.",
+      "brand": "Aba Mastercraft",
+      "categoryId": "fashion-fabrics",
+      "condition": "New",
+      "price": 22000,
+      "discountedPrice": 19500,
+      "stock": 18,
+      "images": [
+        "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=600"
+      ],
+      "specifications": {
+        "Length": "5 Yards",
+        "Color": "Deep Navy Blue",
+        "Weave": "Super 140s Wool"
+      },
+      "supportedStates": [
+        "Lagos"
+      ],
+      "approvalStatus": "approved",
+      "isPublished": true,
+      "isFeatured": false,
+      "ratingAvg": 4.8,
+      "ratingCount": 19,
+      "createdAt": "2026-09-06T11:49:45.973Z"
+    },
+    "prod-006": {
+      "id": "prod-006",
+      "vendorId": "sample-vendor-003",
+      "vendorName": "Alaba Sound & Vision",
+      "name": "Polystar 32-Inch Smart LED Television with Inbuilt Satellite",
+      "slug": "polystar-32-inch-smart-led-tv",
+      "sku": "OSO-ELC-006",
+      "description": "Energy-saving Polystar smart TV, crystal crisp display, Netflix and YouTube apps preloaded, HDMI and USB ports.",
+      "brand": "Polystar",
+      "categoryId": "electronics",
+      "condition": "New",
+      "price": 135000,
+      "discountedPrice": null,
+      "stock": 8,
+      "images": [
+        "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=600"
+      ],
+      "specifications": {
+        "ScreenSize": "32 Inches",
+        "Resolution": "HD 1080p",
+        "Warranty": "1 Year Manufacturer"
+      },
+      "supportedStates": [
+        "Lagos"
+      ],
+      "approvalStatus": "pending",
+      "isPublished": true,
+      "isFeatured": false,
+      "ratingAvg": 0,
+      "ratingCount": 0,
+      "createdAt": "2026-09-07T11:49:45.973Z"
+    },
+    "prod-1788781826333-398": {
+      "vendorId": "sample-vendor-001",
+      "vendorName": "Gadget Express Lagos",
+      "name": "Luxury Royal Velvet Kaftan (3 Pieces)",
+      "slug": "luxury-royal-velvet-kaftan-3-pieces-",
+      "sku": "OSO-2979",
+      "description": "Premium woven Nigerian ceremonial fabric tailored to perfection.",
+      "brand": "Aba Mastercraft",
+      "categoryId": "cat-fashion",
+      "condition": "New",
+      "price": 45000,
+      "discountedPrice": 38000,
+      "stock": 12,
+      "images": [
+        "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=600"
+      ],
+      "specifications": {},
+      "variations": [],
+      "supportedStates": [
+        "Lagos"
+      ],
+      "isPublished": true,
+      "isFeatured": false,
+      "id": "prod-1788781826333-398",
+      "approvalStatus": "approved",
+      "ratingAvg": 5,
+      "ratingCount": 1,
+      "createdAt": "2026-09-07T11:50:26.333Z"
+    }
+  },
+  "categories": {
+    "phones-tablets": {
+      "id": "phones-tablets",
+      "name": "Phones & Tablets",
+      "slug": "phones-tablets",
+      "iconUrl": "📱",
+      "order": 1
+    },
+    "fashion-fabrics": {
+      "id": "fashion-fabrics",
+      "name": "Fashion & Fabrics",
+      "slug": "fashion-fabrics",
+      "iconUrl": "👔",
+      "order": 2
+    },
+    "electronics": {
+      "id": "electronics",
+      "name": "Electronics & Appliances",
+      "slug": "electronics",
+      "iconUrl": "📺",
+      "order": 3
+    },
+    "provisions-groceries": {
+      "id": "provisions-groceries",
+      "name": "Provisions & Groceries",
+      "slug": "provisions-groceries",
+      "iconUrl": "🛒",
+      "order": 4
+    }
+  },
+  "deliveryLocations": {
+    "Lagos": {
+      "id": "Lagos",
+      "state": "Lagos",
+      "isActive": true,
+      "lgas": {
+        "Ikeja": {
+          "fee": 1500,
+          "isActive": true
+        },
+        "Surulere": {
+          "fee": 1800,
+          "isActive": true
+        },
+        "Eti-Osa": {
+          "fee": 2500,
+          "isActive": true
+        },
+        "Lagos Island": {
+          "fee": 2000,
+          "isActive": true
+        },
+        "Lagos Mainland": {
+          "fee": 1600,
+          "isActive": true
+        },
+        "Alimosho": {
+          "fee": 2200,
+          "isActive": true
+        },
+        "Yaba": {
+          "fee": 1500,
+          "isActive": true
+        },
+        "Apapa": {
+          "fee": 2300,
+          "isActive": true
+        },
+        "Agege": {
+          "fee": 1800,
+          "isActive": true
+        },
+        "Ajeromi-Ifelodun": {
+          "fee": 2100,
+          "isActive": true
+        },
+        "Amuwo-Odofin": {
+          "fee": 2000,
+          "isActive": true
+        },
+        "Badagry": {
+          "fee": 3500,
+          "isActive": true
+        },
+        "Epe": {
+          "fee": 4000,
+          "isActive": true
+        },
+        "Ibeju-Lekki": {
+          "fee": 3000,
+          "isActive": true
+        },
+        "Ifako-Ijaiye": {
+          "fee": 1900,
+          "isActive": true
+        },
+        "Ikorodu": {
+          "fee": 2600,
+          "isActive": true
+        },
+        "Kosofe": {
+          "fee": 1700,
+          "isActive": true
+        },
+        "Mushin": {
+          "fee": 1600,
+          "isActive": true
+        },
+        "Ojo": {
+          "fee": 2400,
+          "isActive": true
+        },
+        "Oshodi-Isolo": {
+          "fee": 1700,
+          "isActive": true
+        },
+        "Shomolu": {
+          "fee": 1600,
+          "isActive": true
+        }
+      }
+    }
+  },
+  "orders": {
+    "order-1788781803606": {
+      "id": "order-1788781803606",
+      "orderNumber": "OSO-20260907-7670",
+      "customerId": "user-customer-1",
+      "customerDetails": {
+        "fullName": "Chioma Adebayo",
+        "email": "chioma@osoahia.ng",
+        "phone": "08023456789"
+      },
+      "deliveryAddress": {
+        "fullName": "Chioma Adebayo",
+        "phone": "08023456789",
+        "street": "Plot 12 Admiralty Way, Lekki",
+        "state": "Lagos",
+        "lga": "Ikeja"
+      },
+      "items": [
+        {
+          "productId": "prod-001",
+          "vendorId": "sample-vendor-001",
+          "name": "Tecno Camon 20 Pro (8GB/256GB)",
+          "sku": "OSO-PHN-001",
+          "price": 232000,
+          "quantity": 1,
+          "variation": null,
+          "image": "https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=600"
+        }
+      ],
+      "subtotal": 232000,
+      "deliveryFee": 1500,
+      "total": 233500,
+      "paymentMethod": "paystack",
+      "paymentStatus": "Paid",
+      "orderStatus": "Confirmed",
+      "createdAt": "2026-09-07T11:50:03.606Z",
+      "updatedAt": "2026-09-07T11:50:06.226Z"
+    },
+    "order-1788781809026": {
+      "id": "order-1788781809026",
+      "orderNumber": "OSO-20260907-1812",
+      "customerId": "user-customer-1",
+      "customerDetails": {
+        "fullName": "Chioma Adebayo",
+        "email": "chioma@osoahia.ng",
+        "phone": "08023456789"
+      },
+      "deliveryAddress": {
+        "fullName": "Chioma Adebayo",
+        "phone": "08023456789",
+        "street": "Plot 12 Admiralty Way, Lekki",
+        "state": "Lagos",
+        "lga": "Surulere"
+      },
+      "items": [
+        {
+          "productId": "prod-002",
+          "vendorId": "sample-vendor-002",
+          "name": "Original White Senator Suit Material (4 Yards)",
+          "sku": "OSO-FSH-002",
+          "price": 18000,
+          "quantity": 1,
+          "variation": null,
+          "image": "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=600"
+        }
+      ],
+      "subtotal": 18000,
+      "deliveryFee": 1800,
+      "total": 19800,
+      "paymentMethod": "manual_transfer",
+      "paymentStatus": "Paid",
+      "orderStatus": "Confirmed",
+      "createdAt": "2026-09-07T11:50:09.026Z",
+      "updatedAt": "2026-09-07T11:50:12.566Z"
+    }
+  },
+  "payments": {
+    "pay-1788781806226": {
+      "id": "pay-1788781806226",
+      "orderId": "order-1788781803606",
+      "orderNumber": "OSO-20260907-7670",
+      "customerId": "user-customer-1",
+      "method": "paystack",
+      "amount": 233500,
+      "status": "Paid",
+      "paystackReference": "OSO_TEST_1001",
+      "paystackResponse": {
+        "status": "success",
+        "reference": "OSO_TEST_1001",
+        "amount": 23350000,
+        "channel": "card",
+        "paid_at": "2026-09-07T11:50:06.226Z",
+        "authorization": {
+          "brand": "mastercard",
+          "last4": "4081",
+          "bank": "Access Bank"
+        }
+      },
+      "createdAt": "2026-09-07T11:50:06.226Z"
+    },
+    "pay-1788781810869": {
+      "id": "pay-1788781810869",
+      "orderId": "order-1788781809026",
+      "orderNumber": "OSO-20260907-1812",
+      "customerId": "user-customer-1",
+      "method": "manual_transfer",
+      "amount": 19800,
+      "status": "Paid",
+      "paystackReference": null,
+      "manualPaymentDetails": {
+        "accountTransferredTo": "OPay",
+        "transferReference": "TRX-99881122",
+        "proofUrl": "https://storage.osoahia.ng/receipt-99881122.png",
+        "submittedAt": "2026-09-07T11:50:10.869Z",
+        "verifiedBy": "user-admin-1",
+        "verifiedAt": "2026-09-07T11:50:12.565Z"
+      },
+      "createdAt": "2026-09-07T11:50:10.869Z"
+    }
+  },
+  "platformSettings": {
+    "activeManualGateways": "both",
+    "opayManualAccount": {
+      "accountName": "Oso-Ahia Ent / OPay",
+      "accountNumber": "8101234567",
+      "enabled": true
+    },
+    "paystackManualAccount": {
+      "accountName": "Oso-Ahia Merchant / Titan",
+      "accountNumber": "9920123456",
+      "bankName": "Paystack-Titan",
+      "enabled": true
+    },
+    "marketplaceCommissionRate": 0.1
+  },
+  "notifications": {
+    "notif-1": {
+      "id": "notif-1",
+      "recipientId": "ADMIN",
+      "title": "Vendor Verification Pending",
+      "message": "Alaba Sound & Vision submitted business documents for verification.",
+      "type": "verification",
+      "read": false,
+      "createdAt": "2026-09-07T09:49:45.973Z"
+    },
+    "notif-2": {
+      "id": "notif-2",
+      "recipientId": "ADMIN",
+      "title": "New Product Pending Moderation",
+      "message": "Polystar 32-Inch Smart LED Television was submitted by Alaba Sound & Vision.",
+      "type": "product",
+      "read": false,
+      "createdAt": "2026-09-07T11:19:45.973Z"
+    },
+    "notif-3": {
+      "id": "notif-3",
+      "recipientId": "user-customer-1",
+      "title": "Welcome to Oso-Ahia!",
+      "message": "Enjoy verified Lagos multi-vendor shopping with express doorstep dispatch.",
+      "type": "order",
+      "read": false,
+      "createdAt": "2026-09-06T11:49:45.973Z"
+    },
+    "notif-1788781803611-398": {
+      "id": "notif-1788781803611-398",
+      "recipientId": "ADMIN",
+      "title": "New Order Placed",
+      "message": "Order OSO-20260907-7670 placed for ₦233,500 by Chioma Adebayo",
+      "type": "order",
+      "read": false,
+      "createdAt": "2026-09-07T11:50:03.611Z"
+    },
+    "notif-1788781806226-684": {
+      "id": "notif-1788781806226-684",
+      "recipientId": "user-customer-1",
+      "title": "Payment Received",
+      "message": "Your payment of ₦233,500 for order OSO-20260907-7670 has been verified via Paystack.",
+      "type": "payment",
+      "read": false,
+      "createdAt": "2026-09-07T11:50:06.226Z"
+    },
+    "notif-1788781806227-519": {
+      "id": "notif-1788781806227-519",
+      "recipientId": "ADMIN",
+      "title": "Paystack Payment Confirmed",
+      "message": "Paystack confirmed payment of ₦233,500 for OSO-20260907-7670.",
+      "type": "payment",
+      "read": false,
+      "createdAt": "2026-09-07T11:50:06.227Z"
+    },
+    "notif-1788781809026-995": {
+      "id": "notif-1788781809026-995",
+      "recipientId": "ADMIN",
+      "title": "New Order Placed",
+      "message": "Order OSO-20260907-1812 placed for ₦19,800 by Chioma Adebayo",
+      "type": "order",
+      "read": false,
+      "createdAt": "2026-09-07T11:50:09.026Z"
+    },
+    "notif-1788781810869-407": {
+      "id": "notif-1788781810869-407",
+      "recipientId": "ADMIN",
+      "title": "Manual Transfer Submitted",
+      "message": "Manual transfer submitted for order OSO-20260907-1812 to OPay. Reference: TRX-99881122.",
+      "type": "payment",
+      "read": false,
+      "createdAt": "2026-09-07T11:50:10.869Z"
+    },
+    "notif-1788781810870-668": {
+      "id": "notif-1788781810870-668",
+      "recipientId": "user-customer-1",
+      "title": "Transfer Proof Received",
+      "message": "Your payment details for order OSO-20260907-1812 were received and are awaiting verification.",
+      "type": "payment",
+      "read": false,
+      "createdAt": "2026-09-07T11:50:10.870Z"
+    },
+    "notif-1788781812566-469": {
+      "id": "notif-1788781812566-469",
+      "recipientId": "user-customer-1",
+      "title": "Manual Payment Approved!",
+      "message": "Your direct transfer for order OSO-20260907-1812 (₦19,800) has been verified. Preparing for dispatch!",
+      "type": "payment",
+      "read": false,
+      "createdAt": "2026-09-07T11:50:12.566Z"
+    },
+    "notif-1788781824428-103": {
+      "id": "notif-1788781824428-103",
+      "recipientId": "user-vendor-1",
+      "title": "Vendor Account Verified & Approved",
+      "message": "Congratulations! Your Oso-Ahia vendor shop is now active. You can start listing products.",
+      "type": "verification",
+      "read": false,
+      "createdAt": "2026-09-07T11:50:24.428Z"
+    },
+    "notif-1788781826333-67": {
+      "id": "notif-1788781826333-67",
+      "recipientId": "ADMIN",
+      "title": "New Product Awaiting Approval",
+      "message": "\"Luxury Royal Velvet Kaftan (3 Pieces)\" (OSO-2979) was submitted for approval.",
+      "type": "product",
+      "read": false,
+      "createdAt": "2026-09-07T11:50:26.333Z"
+    },
+    "notif-1788781828836-82": {
+      "id": "notif-1788781828836-82",
+      "recipientId": "user-vendor-1",
+      "title": "Product Approved",
+      "message": "Your product \"Luxury Royal Velvet Kaftan (3 Pieces)\" has been approved by Admin.",
+      "type": "product",
+      "read": false,
+      "createdAt": "2026-09-07T11:50:28.836Z"
+    }
+  },
+  "currentUserId": "user-customer-1"
+}

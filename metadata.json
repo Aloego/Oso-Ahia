@@ -1,0 +1,6 @@
+{
+  "name": "Oso-Ahia (Market Rush)",
+  "description": "Nigerian multi-vendor marketplace with dynamic Lagos State & LGA delivery rates, Paystack card/USSD integration, direct manual bank transfer verification, and vendor onboarding.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

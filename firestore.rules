@@ -1,0 +1,101 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+    
+    function getUserRole() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role;
+    }
+    
+    function isAdmin() {
+      return isAuthenticated() && getUserRole() == 'admin';
+    }
+
+    function isApprovedVendor() {
+      return isAuthenticated() && 
+        getUserRole() == 'vendor' && 
+        get(/databases/$(database)/documents/vendors/$(request.auth.uid)).data.verificationStatus == 'approved';
+    }
+
+    // USERS COLLECTION
+    match /users/{userId} {
+      allow read: if isAuthenticated();
+      // Customers & Vendors can only create their own record and cannot set role to admin
+      allow create: if isAuthenticated() && request.auth.uid == userId && request.resource.data.role in ['customer', 'vendor'];
+      allow update: if isOwner(userId) && request.resource.data.role == resource.data.role;
+      allow delete: if isAdmin();
+    }
+
+    // VENDORS COLLECTION
+    match /vendors/{vendorId} {
+      allow read: if isAuthenticated();
+      allow create: if isOwner(vendorId) && request.resource.data.verificationStatus == 'pending';
+      // Only Admin can modify verification status and commissions
+      allow update: if isAdmin() || (isOwner(vendorId) && request.resource.data.verificationStatus == resource.data.verificationStatus);
+      allow delete: if isAdmin();
+    }
+
+    // PRODUCTS COLLECTION
+    match /products/{productId} {
+      // Approved and published products are publicly viewable
+      allow read: if resource.data.approvalStatus == 'approved' && resource.data.isPublished == true || isAdmin() || (isAuthenticated() && resource.data.vendorId == request.auth.uid);
+      
+      // Only Approved Vendors can create products; initially approvalStatus must be pending
+      allow create: if isApprovedVendor() && 
+                    request.resource.data.vendorId == request.auth.uid && 
+                    request.resource.data.approvalStatus == 'pending';
+                    
+      // Vendors can update draft items, but cannot flip approvalStatus to 'approved'
+      allow update: if isAdmin() || 
+                    (isApprovedVendor() && 
+                     resource.data.vendorId == request.auth.uid && 
+                     request.resource.data.approvalStatus == resource.data.approvalStatus);
+                     
+      allow delete: if isAdmin() || (isOwner(resource.data.vendorId));
+    }
+
+    // CATEGORIES & DELIVERY LOCATIONS
+    match /categories/{catId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /deliveryLocations/{stateId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // ORDERS COLLECTION
+    match /orders/{orderId} {
+      allow read: if isAdmin() || (isAuthenticated() && resource.data.customerId == request.auth.uid);
+      // Order creations and status mutations handled server-side to guarantee integrity
+      allow create, update, delete: if false;
+    }
+
+    // PAYMENTS AUDITING
+    match /payments/{paymentId} {
+      allow read: if isAdmin() || (isAuthenticated() && resource.data.customerId == request.auth.uid);
+      allow write: if false; // Server-only manipulation
+    }
+
+    // PLATFORM SETTINGS
+    match /platformSettings/{docId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // NOTIFICATIONS
+    match /notifications/{notifId} {
+      allow read: if isAuthenticated() && (resource.data.recipientId == request.auth.uid || (resource.data.recipientId == 'ADMIN' && isAdmin()));
+      allow update: if isAuthenticated() && (resource.data.recipientId == request.auth.uid || isAdmin());
+      allow write: if false; // Dispatched server-side
+    }
+  }
+}
